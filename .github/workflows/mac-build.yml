@@ -54,9 +54,9 @@ jobs:
         with:
           name: biotime-mac
           path: |
-            dist/*.dmg
-            dist/*.zip
-            dist/mac*/**/*.app
+            release/*.dmg
+            release/*.zip
+            release/mac*/**/*.app
           if-no-files-found: warn
 
       # Публикуем .dmg и .zip в GitHub Release «biotime-mac-latest» отдельного
@@ -71,8 +71,8 @@ jobs:
             Автоматическая сборка macOS.
             Версия: v${{ steps.ver.outputs.VN }}
           files: |
-            dist/*.zip
-            dist/*.dmg
+            release/*.zip
+            release/*.dmg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # Авто-оповещение сервера о новой версии macOS-сборки. Desktop-клиенты
